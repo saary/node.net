@@ -10,4 +10,4 @@ This short writeup will guide you through creating a simple node.js addon
 
 ## Creating a .Net node addon
 1. Fire up VS2010 and create a new C++ Empty CLR project.
-![new project](images/CreateClrVCProject.png)          
+![new project](raw/master/images/CreateClrVCProject.png)          
