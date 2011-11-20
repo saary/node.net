@@ -27,5 +27,5 @@ This file will hold the actual addon definitions and dll entry point.
 ## What's next?
 * use the project provided here as an initial implementation.
 * take a look at the following [html presentation](http://kkaefer.github.com/node-cpp-modules/#api-how-hard-to-misuse).
-The ppt explains the different steps necessary to register a class with V8.
-* Start rocking!
+the ppt explains the different steps necessary to register a class with V8.
+* start rocking!
