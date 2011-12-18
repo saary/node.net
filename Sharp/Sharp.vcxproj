@@ -44,7 +44,7 @@
     <IncludePath>E:\node-v0.6.2\deps\v8\include;E:\node-v0.6.2\deps\uv\include;E:\node-v0.6.2\src;$(IncludePath)</IncludePath>
     <LibraryPath>E:\node-v0.6.2\Debug;E:\node-v0.6.2\Debug\lib;$(LibraryPath)</LibraryPath>
     <TargetExt>.node</TargetExt>
-    <ReferencePath>E:\Documents\Visual Studio 2010\Projects\Sharp\SharpLib\bin\Debug;$(ReferencePath)</ReferencePath>
+    <ReferencePath>E:\Public Projects\node.net\SharpLib\bin\Debug;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -76,9 +76,15 @@
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="SharpLibHelper.cpp" />
+    <ClCompile Include="v8external.cpp" />
+    <ClCompile Include="v8function.cpp" />
+    <ClCompile Include="v8value.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SharpLibHelper.h" />
+    <ClInclude Include="v8external.h" />
+    <ClInclude Include="v8function.h" />
+    <ClInclude Include="v8value.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

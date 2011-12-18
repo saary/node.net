@@ -1,4 +1,7 @@
 #include "SharpLibHelper.h"
+#include "v8value.h"
+#include <uv.h>
+
 #using <mscorlib.dll>
 #using <SharpLib.dll>
 #include <gcroot.h>
@@ -6,6 +9,7 @@
 using namespace System::Runtime::InteropServices;
 using namespace System::Reflection;
 using namespace SharpLib;
+
 
 // we need to look for the assembly in the current directory
 // node will search for it next to the node.exe binary
@@ -63,6 +67,22 @@ public:
     virtual int GetNumber()
     {
         return _sharpClass->Number;
+    }
+
+    static void DownloadUrlCallback(System::String^ s, System::IntPtr state)
+    {
+        Baton2* baton = (Baton2*)state.ToPointer();
+        System::IntPtr p = Marshal::StringToHGlobalAnsi(s);
+        baton->result = static_cast<char*>(p.ToPointer());
+        Marshal::FreeHGlobal(p);
+        uv_async_send(&baton->asyncHandle);
+    }
+
+    virtual void DownloadUrlAsync(std::string& url, Baton2* baton)
+    {
+        System::Action<System::String^, System::IntPtr>^ action = gcnew System::Action<System::String^, System::IntPtr>(&DownloadUrlCallback);
+        System::IntPtr p = System::IntPtr(baton);
+        _sharpClass->DownloadUrlAsync(gcnew System::String(url.c_str()), action, p);
     }
 };
 
