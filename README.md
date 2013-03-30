@@ -1,3 +1,5 @@
+### If you want a full suger coated awesome node.js/.Net integration library checkout [edge](http://tjanczuk.github.com/edge) written by [Tomek](http://tomasz.janczuk.org/2013/03/run-c-and-nodejs-code-in-process-with.html)
+
 # Creating a nodejs native .Net extension
 This short writeup will guide you through creating a simple node.js addon
 
